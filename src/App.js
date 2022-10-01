@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import {
+    Navbar,
+    Header,
+    Stats,
+    Collectibles,
+    Category,
+    Footer,
+} from './containers/index'
+import { AppProvider } from './Context/Context'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const App = () => {
+    return (
+        <AppProvider>
+            <div className="w-full h-full bg-primary-light dark:bg-primary-dark duration-300">
+                <Navbar />
+                <Header />
+                <Stats />
+                <Collectibles />
+                <Category />
+                <Footer />
+            </div>
+        </AppProvider>
+    )
 }
 
-export default App;
+export default App
